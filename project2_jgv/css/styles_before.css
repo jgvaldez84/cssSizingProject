@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c1f9c6;
+    color: black;
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 400;
+}
+
+.brand {
+    color: gold;
+    background-color: transparent;
+    font-size: 1.25rem;
+}
+
+header {
+    background-image: url("../images/gp_back1.png");
+    background-size: auto;
+}
+header img {
+    max-width: 100%;
+}
+
+main {
+    background-color: white;
+    color: black;
+}
+/* main grid layout */
+.main-grid-container {
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: [header] auto [navigation] auto [main] 1fr [footer] auto;
+    grid-template-areas: "header"
+                         "navigation"
+                         "main"
+                         "footer";
+    padding: 0em 0.75em;
+    margin: 0em;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em;
+    padding: 0.5rem 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+
+}
+
+li {
+    margin: 0.5em;
+
+}
+
+nav {
+    background-color: #343a40;
+    color: rgb(255,215,0);
+
+}
+
+nav a {
+    color: rgb(255,215,0);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+nav a:hover {
+    transition: color 0.5s ease;
+    color: white;
+    background-color: #343a40;
+}
+
+
+footer {
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+}
+
+footer p {
+    padding: 0.1em;
+}
+
+/* nested flex layouts */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.panel{
+    width: 100%;
+    height: auto;
+}
+
+#sneakPeek-Flex {
+    background-color: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.panels {
+    justify-content: center;
+    align-items: center;
+}
+
+.panels img {
+  width: 100%;
+  height: auto;
+  border: 2px;
+  padding: 2px;
+}
+
+
+/* form styles */
+form {
+    display: grid;
+    grid-template-columns: 13em 10em;
+    grid-gap: 0em;
+    padding-left: 1em;
+}
+
+label {
+    grid-column: 1 / 2;
+    font-weight: bold;
+}
+
+
+.required{
+    color: #C5050C;
+    font-weight: bold;
+    padding-left: 1em;
+}
+
+.selections {
+    padding-left: 1em;
+    font-weight: normal;
+}
+
+
+.button {
+    padding: 1.5em;
+    color: white;
+}
+button[type="submit"]{
+color: white;
+background-color: green;
+}
+button[type="reset"]{
+color: white;
+background-color: #595959;
+}
+
+button[type="submit"], button[type="reset"]{
+    border-radius: .75em;
+    padding:0.25em;
+    margin: .25em
+}
+
+/* media queries */
+
+ @media (min-width: 768px){
+     body {
+         margin: 0;
+         padding: 0 1.25em;
+     }
+    .main-grid-container {
+        margin: 0;
+        padding: 0 1.25em;
+    }
+
+    ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0.5em 0.55em;
+    }
+
+.panel{
+        flex: 3 0 60%;
+}
+#arrow {
+    flex: 1 0 10%;
+    padding: 1em 0.5em;
+    align-self: center;
+}
+
+#fawcett {
+    flex: 1 0 30%;
+    justify-content: space-around;
+}
+
+#sneakPeek-Flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+    .panels img:hover {
+        transition: transform 0.3s ease;
+        transform: scale(1.05);
+}
+
+}
